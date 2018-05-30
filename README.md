@@ -1,24 +1,11 @@
-# README
+# OOTD README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### An app for your outfit of the day.
 
-Things you may want to cover:
+```
+Tinder-Instagram hybrid.
+```
 
-* Ruby version
+* Devise user system
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Database is using postgresql
