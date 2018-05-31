@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # User model
 gem 'devise'
+
+# JQuery
+gem 'jquery-rails'
