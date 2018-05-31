@@ -1,0 +1,12 @@
+<% provide(:title, @title) %>
+<h1><%= @user.username %></h1>
+<%= link_to "view my profile", @user %>
+<%= render 'shared/stats' %>
+
+
+<h3><%= @title %></h3>
+<% if @users.any? %>
+  <% @users.each do |user| %>
+    <%= link_to user.username, user %>
+  <% end %>
+<% end %>
