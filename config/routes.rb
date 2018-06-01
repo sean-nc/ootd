@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   devise_for      :users
   resources       :relationships, only: [:create, :destroy]
   resources       :users, only: [:index, :show] do
+    resources   :posts, only: [:show, :new, :create, :destroy]
     member do
-      resources   :posts, only: [:show, :new, :create, :destroy]
       get         :following, :followers
     end
   end

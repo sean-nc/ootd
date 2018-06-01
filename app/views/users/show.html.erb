@@ -3,10 +3,10 @@
 <%= render 'follow_form' if user_signed_in? %>
 
 <% @posts.each do |p| %>
-  <%= link_to p.id, p %>
+  <%= link_to "Show", user_post_path(@user, p) %>
   <%= p.content %>
 <% end %>
 
 <% if current_user?(@user) %>
-  <%= link_to "New Post", new_post_path %>
+  <%= link_to "New Post", new_user_post_path(current_user) %>
 <% end %>
