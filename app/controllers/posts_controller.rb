@@ -1,29 +1,24 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @posts = Post.all
-  end
-
   def show
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def edit
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to @post
       flash[:notice] = "Post was successfully created."
     else
       render 'new'
     end
-  end
 
   def update
     if @post.update(post_params)
