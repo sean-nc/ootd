@@ -1,3 +1,4 @@
+<%= image_tag @post.image.url if @post.image? %>
 <p><%= @post.content %></p>
 
 <% if current_user?(@user) %>
