@@ -1,6 +1,10 @@
 <%= image_tag @post.image.url if @post.image? %>
 <p><%= @post.content %></p>
 
+<p id="likes"><%= @post.likes.count %></p>
+
+<%= render 'like_form' %>
+
 <% @comments.each do |c| %>
   <p><%= c.content %> - <b><%= c.user.username %></b></p>
   <% if current_user == c.user || @post.user %>
