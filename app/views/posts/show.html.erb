@@ -7,8 +7,8 @@
 
 <% @comments.each do |c| %>
   <p><%= c.content %> - <b><%= c.user.username %></b></p>
-  <% if current_user == c.user || @post.user %>
-    <%= link_to 'Destroy', [current_user, @post, c], method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if current_user == c.user || current_user == @post.user %>
+    <%= link_to 'Delete Post', [current_user, @post, c], method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 <% end %>
 
