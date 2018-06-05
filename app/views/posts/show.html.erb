@@ -1,6 +1,15 @@
 <%= image_tag @post.image.url if @post.image? %>
 <p><%= @post.content %></p>
 
+<% @comments.each do |c| %>
+  <p><%= c.content %> - <b><%= c.user.username %></b></p>
+  <% if current_user == c.user || @post.user %>
+    <%= link_to 'Destroy', [current_user, @post, c], method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>
+
+<%= link_to "Comment", new_user_post_comment_path(post_id: @post.id) %>
+
 <% if current_user?(@user) %>
   <%= link_to 'Back', @user %>
   <%= link_to 'Destroy', [current_user, @post], method: :delete, data: { confirm: 'Are you sure?' } %>

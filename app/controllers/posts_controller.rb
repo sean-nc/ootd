@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find(@post.user_id)
+    @comments = @post.comments
   end
 
   def new
