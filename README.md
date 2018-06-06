@@ -5,7 +5,7 @@ https://my-ootd-app.herokuapp.com/
 #### An app for your outfit of the day.
 
 ```
-Tinder-Instagram hybrid.
+Instagram-like
 ```
 
 * Devise user system
